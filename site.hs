@@ -1,15 +1,23 @@
 {-# LANGUAGE OverloadedStrings #-}
+import Data.Monoid ((<>))
 import Hakyll
-
-directFiles :: Pattern
-directFiles = "images/*" .||. "css/*" .||. "js/*"
 
 main :: IO ()
 main = hakyll $ do
-         match directFiles $ do
+         match ("images/*.jpg" .||. "css/*.css" .||. "js/*.js") $ do
                   route idRoute
                   compile copyFileCompiler
 
-         match "index.html" $ do
+         match "templates/*.html" $ compile templateCompiler
+
+         match "pages/index-*.md" $ compile pandocCompiler
+
+         create ["index.html"] $ do
                   route idRoute
-                  compile copyFileCompiler
+                  compile $ do
+                    articles <- loadAll "pages/index-*.md"
+                    let ctx = listField "articles" defaultContext (return articles) <> defaultContext
+                    makeItem "" >>=
+                      loadAndApplyTemplate "templates/section.html" ctx >>=
+                      loadAndApplyTemplate "templates/main.html" defaultContext
+                                                     
