@@ -10,14 +10,19 @@ main = hakyll $ do
 
          match "templates/*.html" $ compile templateCompiler
 
-         match "pages/index-*.md" $ compile pandocCompiler
+         match "pages/*.md" $ compile pandocCompiler
 
-         create ["index.html"] $ do
-                  route idRoute
-                  compile $ do
-                    articles <- loadAll "pages/index-*.md"
-                    let ctx = listField "articles" defaultContext (return articles) <> defaultContext
-                    makeItem "" >>=
-                      loadAndApplyTemplate "templates/section.html" ctx >>=
-                      loadAndApplyTemplate "templates/main.html" defaultContext
-                                                     
+         create ["index.html"] $ section "news" "News"
+
+         create ["about.html"] $ section "about" "About"
+
+section :: String -> String -> Rules ()
+section section title = do
+  route idRoute
+  compile $ do
+    articles <- loadAll $ fromGlob $ "pages/" ++ section ++ "-*.md"
+    let sectionCtx = listField "articles" defaultContext (return articles) <> defaultContext
+    let mainCtx = constField "title" title <> defaultContext
+    makeItem "" >>=
+            loadAndApplyTemplate "templates/section.html" sectionCtx >>=
+            loadAndApplyTemplate "templates/main.html" mainCtx

@@ -52,3 +52,11 @@ body > nav {
     padding: 0;
     background-color: black;
 }
+
+body > header > h1, body > header > h2 {
+    display: inline-block;
+}
+
+body > header > h2::before {
+    content: " − ";
+}

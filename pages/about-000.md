@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: Me
 anchor: me
 ---
 

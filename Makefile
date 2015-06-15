@@ -9,7 +9,7 @@ build: site
 rebuild: site
 	./site rebuild
 
-watch: site
+watch: site rebuild
 	./site watch
 
 clean: site
