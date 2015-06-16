@@ -1,6 +1,6 @@
 ---
-title: Me
-anchor: me
+title: Current Status
+anchor: status
 ---
 
 I am a graduate student at
@@ -12,3 +12,6 @@ curriculum. I graduated from the
 graduate school in electrical engineering and computer science
 in 2014.
 
+I am interested in the domains of programming languages, formal
+verification, computer architectures, and operating systems, as well
+as their applications in the field of computer security.

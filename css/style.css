@@ -2,10 +2,13 @@ header, section, footer, aside, nav, article, figure {
     display: block;
 }
 
-html {
+body {
     background-color: black;
     color: lightgray;
+    font-size: 1.5em;
     font-family: monospace;
+    margin: auto;
+    max-width: 80ch;
 }
 
 strong, header, h1, h2, h3, h4, h5, h6 {
@@ -14,11 +17,6 @@ strong, header, h1, h2, h3, h4, h5, h6 {
 
 em, a {
     color: cyan;
-}
-
-body {
-    margin: auto;
-    max-width: 80ex;
 }
 
 nav h1 {
