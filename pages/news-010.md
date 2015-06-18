@@ -1,5 +1,5 @@
 ---
-title: Past Events
+header: Past Events
 anchor: past
 ---
 

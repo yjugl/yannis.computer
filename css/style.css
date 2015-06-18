@@ -19,7 +19,7 @@ em, a {
     color: cyan;
 }
 
-nav h1 {
+nav h2 {
     display: none;
 }
 
@@ -51,10 +51,10 @@ body > nav {
     background-color: black;
 }
 
-body > header > h1, body > header > h2 {
+body > header > h1, body > header > h3 {
     display: inline-block;
 }
 
-body > header > h2::before {
-    content: " − ";
+body > header > h3::before {
+    content: " -- ";
 }

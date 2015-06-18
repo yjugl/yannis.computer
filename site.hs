@@ -21,7 +21,7 @@ section section title = do
   route idRoute
   compile $ do
     articles <- loadAll $ fromGlob $ "pages/" ++ section ++ "-*.md"
-    let sectionCtx = listField "articles" defaultContext (return articles) <> defaultContext
+    let sectionCtx = constField "title" "" <> listField "articles" defaultContext (return articles) <> defaultContext
     let mainCtx = constField "title" title <> defaultContext
     makeItem "" >>=
             loadAndApplyTemplate "templates/section.html" sectionCtx >>=

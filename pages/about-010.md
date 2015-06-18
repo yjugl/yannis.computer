@@ -1,5 +1,5 @@
 ---
-title: Current and Future Work
+header: Current and Future Work
 anchor: work
 ---
 

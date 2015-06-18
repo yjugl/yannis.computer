@@ -1,9 +1,13 @@
+$if(header)$
 <section>
-  $for(articles)$
-  <article>
-    <header><h1 id="$anchor$">$title$</h1></header>
-
+  <h2>$title$</h2>
+$endif$
+$for(articles)$
+  <article $if(anchor)$ id="$anchor$"$endif$>
+$if(header)$<header><h3>$header$</h3></header>$endif$
 $body$
   </article>
-  $endfor$
+$endfor$
+$if(header)$
 </section>
+$endif$
