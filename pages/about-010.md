@@ -21,7 +21,7 @@ source language level. Please
 [follow this link](http://prosecco.gforge.inria.fr/personal/hritcu/students/topics/2015/micro-policies-yannis.pdf)
 to learn more more about this work.
 
-The next-step will be a PhD on micro-policy composition and secure
+The next step will be a PhD on micro-policy composition and secure
 compilation, with the same advisors, which I will begin in October
 2015 as a
 [DGA](http://www.defense.gouv.fr/dga)
